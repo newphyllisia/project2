@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <body style="background-color:red;">
+         <link rel="stylesheet" href="style.css">
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style type="text/css">
+        .centerImage
+        {
+         text-align:center;
+         display:block;
+        }
+        </style>
+
+<title>Shift Swap</title>
+</head>
+<body>
+
+          <div class="container">
+
+            <div class="container"  style="width: 845px">
+                <img src="arbys.png" alt="arbys logo" />
+            </div>
+        
+        </div>
+          
+ <div>
+        <script>
+        $(document).ready(function () {
+            
+            var list1 = document.getElementById('firstList');
+        
+            list1.options[0] = new Option('--Select--', '');
+            list1.options[1] = new Option('Backline', 'Backline');
+            list1.options[2] = new Option('Frontline/DriveThru', 'Frontline/DriveThru');
+            });
+    </script>
+    
+    <script>var list1 = document.getElementById('firstList');</script>
+    
+    <script>list1.options[0] = new Option('--Select--', '');
+        list1.options[1] = new Option('Backline', 'Backline');
+        list1.options[2] = new Option('Frontline/DriveThru', 'Frontline/DriveThru');</script>
+    
+        <script>function getPosition(){
+            var list1 = document.getElementById('firstList');
+            var list2 = document.getElementById("secondList");
+            var list1SelectedValue = list1.options[list1.selectedIndex].value;
+            
+            if (list1SelectedValue=='Backline')
+            {
+                
+                list2.options.length=0;
+                list2.options[0] = new Option('--Select--', '');
+                list2.options[1] = new Option('Marena', 'Marena');
+                list2.options[2] = new Option('Heydi', 'Heydi');
+                list2.options[3] = new Option('Gabriel', 'Gabriel');
+                list2.options[4] = new Option('Daniel', 'Daniel');
+                list2.options[5] = new Option('Anthony', 'Anthony');
+                list2.options[6] = new Option('Eddie', 'Eddie');
+                list2.options[7] = new Option('Crystal', 'Crytal');
+                
+            }
+            else if (list1SelectedValue=='Frontline/DriveThru')
+            {
+                
+                list2.options.length=0;
+                list2.options[0] = new Option('--Select--', '');
+                list2.options[1] = new Option('Katie', 'Katie');
+                list2.options[2] = new Option('Tyler', 'Tyler');
+                list2.options[3] = new Option('Crystal', 'Crystal');
+                list2.options[4] = new Option('Malik', 'Malik');
+                list2.options[5] = new Option('BriAna', 'BriAna');
+                list2.options[6] = new Option('Jenna', 'Jenna');
+                list2.options[7] = new Option('Gabriel', 'Gabriel');
+                list2.options[8] = new Option('Luis', 'Luis');
+                list2.options[9] = new Option('AnnMary', 'AnnMary');
+                list2.options[10] = new Option('Nancy', 'Nancy');
+            }
+    }</script>
+ </div>
+    <div class="col-md-4">
+        <form>
+        <h4>Postion You Are Scheduled To Work</h4>
+        <select class="form-control"  id='firstList' name='firstList' onClick="getPosition()">
+        </select>
+        
+        <h4>Employee Taking Over Shift</h4>
+        <select class="form-control"  id='secondList' name='secondList' >
+        </select>
+        
+        </form>
+
+        </div>
+        <label class="dswap" for="start"><h4>Date of Swap:</h4></label>
+
+        <input type="date" id="start" name="trip-start"
+               value="Select Date"
+               min="2021-01-01" max="2021-12-31">
+
+        <div class="newbutton"><form name="form1" id="form1" action="/action_page.php">
+             <select name="subject" id="subject">
+              <option value="" selected="selected">Select Your Name</option>
+    
+            </select>
+            <br><br>
+             <select name="topic" id="topic">
+              <option value="" selected="selected">Select Manager on Duty</option>
+            </select>
+            <br><br>
+             <select name="chapter" id="chapter">
+              <option value="" selected="selected">Select Shift </option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
+          </div>    
+          <div class="button">
+              <script>var subjectObject = {
+            "Tyler": {
+              "Phyllisia": ["Open", "Mid", "Close", "Lists"],
+              "Glenn": ["Borders", "Margins", "Backgrounds", "Float"],
+              "Iuliana": ["Variables", "Operators", "Functions", "Conditions"] 
+            },
+            "Gabriel": {
+              "Phyllisia": ["Open", "Mid", "Close", "Lists"],
+              "Glenn": ["Borders", "Margins", "Backgrounds", "Float"],
+              "Iuliana": ["Variables", "Operators", "Functions", "Conditions"]
+            },
+            "Back-end": {
+              "PHP": ["Variables", "Strings", "Arrays"],
+              "SQL": ["SELECT", "UPDATE", "DELETE"]
+            }
+          }
+          window.onload = function() {
+            var subjectSel = document.getElementById("subject");
+            var topicSel = document.getElementById("topic");
+            var chapterSel = document.getElementById("chapter");
+            for (var x in subjectObject) {
+              subjectSel.options[subjectSel.options.length] = new Option(x, x);
+            }
+            subjectSel.onchange = function() {
+              //empty Chapters- and Topics- dropdowns
+              chapterSel.length = 1;
+              topicSel.length = 1;
+              //display correct values 
+              for (var y in subjectObject[this.value]) {
+                topicSel.options[topicSel.options.length] = new Option(y, y);
+              }
+            }
+            topicSel.onchange = function() {
+              //empty Chapters dropdown
+              chapterSel.length = 1;
+              //display correct values
+              var z = subjectObject[subjectSel.value][this.value];
+              for (var i = 0; i < z.length; i++) {
+                chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+              }
+            }
+          } </script>
+
+
+        </div>
+</body>
+</html>
